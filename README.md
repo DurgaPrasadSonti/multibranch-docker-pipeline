@@ -31,3 +31,20 @@ systemctl status jenkins --no-pager
 
 yum install docker -y && systemctl start docker
 chmod 777 /var/run/docker.sock
+
+
+=============================================================================
+Node offline issue Trouble shooting:
+
+df -h /tmp
+
+mount | grep ' /tmp '
+
+sudo mount -o remount,size=2G /tmp
+
+df -h /tmp
+
+sudo systemctl restart Jenkins
+sudo systemctl status jenkins --no-pager
+
+
